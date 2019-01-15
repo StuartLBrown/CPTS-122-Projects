@@ -1,0 +1,15 @@
+﻿  main.c
+c:\users\solar\google drive\c freshman\cpts 122\programming assignments\pa1\pa1\main.c(3): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+  fitbit.c
+c:\users\solar\google drive\c freshman\cpts 122\programming assignments\pa1\pa1\fitbit.c(15): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\users\solar\google drive\c freshman\cpts 122\programming assignments\pa1\pa1\fitbit.c(17): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\solar\google drive\c freshman\cpts 122\programming assignments\pa1\pa1\fitbit.c(20): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+  Generating Code...
+c:\users\solar\google drive\c freshman\cpts 122\programming assignments\pa1\pa1\fitbit.c(4): warning C4716: 'readLine': must return a value
+c:\users\solar\google drive\c freshman\cpts 122\programming assignments\pa1\pa1\fitbit.c(23): warning C4172: returning address of local variable or temporary: patient
+  PA1.vcxproj -> C:\Users\solar\Google Drive\C Freshman\CPTS 122\Programming Assignments\PA1\Debug\PA1.exe
+  PA1.vcxproj -> C:\Users\solar\Google Drive\C Freshman\CPTS 122\Programming Assignments\PA1\Debug\PA1.pdb (Full PDB)
