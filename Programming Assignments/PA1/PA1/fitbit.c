@@ -1,6 +1,20 @@
 #include "fitbit.h"
+FitBitData null = NULL;
 FitBitData readLine(FILE *file, char *patient) {
-	puts(patient);
+	if (patient != NULL && file != NULL) {
+		FitBitData data;
+		char line[100];
+		fgets(line, 100, file);
+		strtok(line, ",");
+		char temp[20];
+		strcpy(temp, line);
+		if (*temp != '\0'&&strcmp(temp,patient)==0) {
+			strcpy(data.patient, patient);
+
+		}
+		return data;
+	}
+	return null;
 }
 void test(char *test) {
 	puts(test);
@@ -15,10 +29,9 @@ char *getPatient(FILE *file) {
 	strcpy(line,strchr(line, ','));
 	char patient[6];
 	strtok(line, ",");
-	if (strcmp(line, ",") == 0)
+	if (*(line)=='\0')
 		return NULL;
 	strcpy(patient, line + 1);
-	puts(patient);
 	fgets(line, 100, file);
 	return patient;
 }
