@@ -15,6 +15,23 @@ typedef struct {
 	unsigned int steps;
 	Sleep sleepLevel;
 }FitBitData;
+typedef struct {
+	double totalDistance;
+	double totalCalories;
+	int floorsWalked;
+	int totalSteps;
+	int averageHeartRate;
+	int maxStepsInOneMinute;
+	char startMinute[9];
+	char endMinute[9];
+}Stats;
 FitBitData readLine(FILE *file, char *patient);
 char *getPatient(FILE *file);
 void test(char *test);
+void printData(FitBitData data);
+//returns 0 if valid, 1-8 depending on which entry is bad
+int verifyLine(char *line);
+void readBadLine(FitBitData *data, char *line, int badData);
+void writeStats(FILE *file, Stats stats);
+Stats calcStats(FitBitData *data, int size, char *patient);
+void writeDataToFile(FitBitData *data, int size, FILE *file);
