@@ -13,4 +13,6 @@ typedef struct {
 	Node *next;
 }Node;
 void initList(Node **head);
+Node *makeNode(Data item);
+int insertAtFront(Node **head, Data newItem);
 #endif // !LINKEDLIST_H
