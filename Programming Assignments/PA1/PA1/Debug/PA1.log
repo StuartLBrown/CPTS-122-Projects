@@ -1,4 +1,9 @@
-﻿  fitbit.c
+﻿  main.c
+c:\github projects\cpts-122-projects\programming assignments\pa1\pa1\main.c(3): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
+c:\github projects\cpts-122-projects\programming assignments\pa1\pa1\main.c(5): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+  fitbit.c
 c:\github projects\cpts-122-projects\programming assignments\pa1\pa1\fitbit.c(7): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
 c:\github projects\cpts-122-projects\programming assignments\pa1\pa1\fitbit.c(8): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
@@ -112,6 +117,8 @@ c:\github projects\cpts-122-projects\programming assignments\pa1\pa1\fitbit.c(18
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
 c:\github projects\cpts-122-projects\programming assignments\pa1\pa1\fitbit.c(182): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+  Generating Code...
 c:\github projects\cpts-122-projects\programming assignments\pa1\pa1\fitbit.c(57): warning C4172: returning address of local variable or temporary: patient
-  PA1.vcxproj -> C:\GitHub Projects\CPTS-122-Projects\Programming Assignments\PA1\Debug\PA1.exe
-  PA1.vcxproj -> C:\GitHub Projects\CPTS-122-Projects\Programming Assignments\PA1\Debug\PA1.pdb (Full PDB)
+  LINK : C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA1\Debug\PA1.exe not found or not built by the last incremental link; performing full link
+  PA1.vcxproj -> C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA1\Debug\PA1.exe
+  PA1.vcxproj -> C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA1\Debug\PA1.pdb (Full PDB)

@@ -185,6 +185,8 @@ Stats calcStats(FitBitData *data, int size, char *patient) {
 void writeDataToFile(FitBitData *data, int size, FILE *file) {
 	fputs("Target: ,12cx7,,,,,,\nPatient,minute,calories,distance,floors,heart,steps,sleep_level\n",file);
 	for (int i = 0; i < size;i++) {
-		fprintf(file, "%s,%s,%.2lf,%.2lf,%d,%d,%d,%d\n", (data + i)->patient, (data + i)->minute, (data + i)->calories, (data + i)->distance, (data + i)->floors, (data + i)->heartRate, (data + i)->steps, (data + i)->sleepLevel);
+		if (strcmp((data + i)->patient, "ERROR") != 0) {
+			fprintf(file, "%s,%s,%.2lf,%.2lf,%d,%d,%d,%d\n", (data + i)->patient, (data + i)->minute, (data + i)->calories, (data + i)->distance, (data + i)->floors, (data + i)->heartRate, (data + i)->steps, (data + i)->sleepLevel);
+		}
 	}
 }
