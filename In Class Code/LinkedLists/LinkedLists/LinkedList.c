@@ -17,7 +17,26 @@ int insertAtFront(Node **head, Data item) {
 	pMem = makeNode(item);
 	if (pMem != NULL) {
 		success = 1;
-		pMem->next = pMem;
+		pMem->next = *head;
+		*head = pMem;
+	}
+	return success;
+}
+void printList(Node *head) {
+	if (head != NULL) {
+		printf("ID: %d\n", head->data.data);
+		printList(head->next);
+	}
+}
+int deleteItem(Node **head, Data item) {
+	Node *pTemp = NULL, *pCur = *head;
+	int success = 0;
+	while (!success&&pCur!=NULL) {
+		if (pCur->data.data == item.data) {
+			success = 1;
+			//once we find we free it
+			free(pTemp);
+		}
 	}
 	return success;
 }

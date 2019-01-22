@@ -8,11 +8,13 @@ typedef struct {
 	int data;
 }Data;
 //struct for the linked list
-typedef struct {
+typedef struct node {
 	Data data;
-	Node *next;
+	struct node *next;
 }Node;
 void initList(Node **head);
 Node *makeNode(Data item);
 int insertAtFront(Node **head, Data newItem);
+void printList(Node *head);
+int deleteItem(Node **head, Data item);
 #endif // !LINKEDLIST_H
