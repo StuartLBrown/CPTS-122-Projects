@@ -1,0 +1,12 @@
+﻿  lab2.c
+c:\github projects\cpts-122-projects\lab problems\lab2\lab2\lab2.c(91): warning C4047: 'initializing': 'char' differs in levels of indirection from 'void *'
+c:\github projects\cpts-122-projects\lab problems\lab2\lab2\lab2.c(92): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\github projects\cpts-122-projects\lab problems\lab2\lab2\lab2.c(93): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\github projects\cpts-122-projects\lab problems\lab2\lab2\lab2.c(94): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+c:\github projects\cpts-122-projects\lab problems\lab2\lab2\lab2.c(95): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
+  Lab2.vcxproj -> C:\Github Projects\CPTS-122-Projects\Lab Problems\Lab2\Debug\Lab2.exe
+  Lab2.vcxproj -> C:\Github Projects\CPTS-122-Projects\Lab Problems\Lab2\Debug\Lab2.pdb (Full PDB)
