@@ -34,9 +34,40 @@ int deleteItem(Node **head, Data item) {
 	while (!success&&pCur!=NULL) {
 		if (pCur->data.data == item.data) {
 			success = 1;
+			if (pTemp != NULL) {
+				//'delinking' the node that is neeeded for deletion 
+				pTemp->next = pCur->next;
+			}
+			else {//deleting the first item
+				(*head)->next = pCur->next;
+			}
 			//once we find we free it
-			free(pTemp);
+			free(pCur);
+		}
+		else {
+			pTemp = pCur;
+			pCur = pCur->next;
 		}
 	}
 	return success;
+}
+int isEmpty(Node *head) {
+	return head == NULL;
+}
+int insertInOrder(Node **head, Data item) {
+	if (*head == NULL) {
+		*head = makeNode(item);
+		return head != NULL;
+	}
+	else {
+		Node *prev=NULL, *cur=*head, *mem = NULL;
+		int success = 0;
+		mem = makeNode(item);
+		if (mem != NULL) {
+			while (cur != NULL&&cur->data.data < item.data) {
+
+			}
+		}
+		return success;
+	}
 }

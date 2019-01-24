@@ -17,4 +17,7 @@ Node *makeNode(Data item);
 int insertAtFront(Node **head, Data newItem);
 void printList(Node *head);
 int deleteItem(Node **head, Data item);
+int isEmpty(Node *head);
+//smallest to largest
+int insertInOrder(Node **head, Data item);
 #endif // !LINKEDLIST_H
