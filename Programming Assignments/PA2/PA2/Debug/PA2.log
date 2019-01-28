@@ -1,30 +1,35 @@
 ﻿  dmm.c
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.h(30): warning C4031: second formal parameter list longer than the first list
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.h(30): warning C4028: formal parameter 1 different from declaration
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.h(30): warning C4273: 'exit': inconsistent dll linkage
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.h(40): warning C4031: second formal parameter list longer than the first list
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.h(40): warning C4028: formal parameter 1 different from declaration
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.h(40): warning C4273: 'exit': inconsistent dll linkage
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdlib.h(50): note: see previous definition of 'exit'
 c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(5): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(34): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(16): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(45): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(48): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(51): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(1270): note: see declaration of 'scanf'
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(61): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(48): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(64): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(49): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(65): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(50): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(66): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(51): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(67): warning C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(119): note: see declaration of 'strcpy'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(52): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(68): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(53): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(69): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(54): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(70): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(55): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(71): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
   c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
-c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(77): warning C4047: '=': 'node *' differs in levels of indirection from 'Node **'
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa2\pa2\dmm.c(107): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\stdio.h(205): note: see declaration of 'fopen'
   PA2.vcxproj -> C:\Users\solar\Documents\GitHub\CPTS-122-Projects\Programming Assignments\PA2\Debug\PA2.exe
   PA2.vcxproj -> C:\Users\solar\Documents\GitHub\CPTS-122-Projects\Programming Assignments\PA2\Debug\PA2.pdb (Full PDB)

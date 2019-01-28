@@ -19,14 +19,25 @@ typedef struct node {
 	struct node *next;
 	Record song;
 }Node;
+//done
 void menu(FILE *infile);
+
+//done
 Node *makeNode(Record data);
+
+//done
 int load(FILE *infile, Node **list);
-int store(FILE *outfile, Node *list);
-void display(Node *list);
+
+//precondition: file doesn't have to be in write mode beforehand, data will be overwritten anyway
+//done
+int store(FILE *file, Node *list);
+
+//done
+void display(Node *list,char *artist);
 void edit(Node **list);
 void rate(Node **list);
 void play(Node *list);
 void exit(Node *list, FILE *outfile);
+
+//done
 int insertAtFront(Node **list, Record data);
-void printList(Node *list);

@@ -5,32 +5,46 @@ void menu(FILE *infile) {
 	scanf("%d", &input);
 	Node *list = NULL;
 	while (input != 11) {
-		switch (input) {
-		case 1:
-			load(infile, &list);
-		case 2:
-			//store();
-		case 3:
-			//display();
-		case 4:
+		if (input == 1) {
+			if (load(infile, &list))
+				printf("Succesfully loaded songs into list\n");
+		}
+		else if (input == 2)
+			store(infile, list);
+		else if (input == 3) {
+			printf("1.Display all songs\n2.Display all songs by a specific artist\nEnter your option: ");
+			scanf("%d", &input);
+			if (input != 2) {
+				display(list, NULL);
+			}
+			else {
+				printf("Enter an artists name (note it is case sensitive): ");
+				char name[20];
+				fgets(name, 20, stdin);
+				display(list, name);
+			}
+		}
+		//else if (input == 4)
 			//insert
-		case 5:
+		//else if (input == 5)
 			//delete
-		case 6:
+		//else if (input == 6)
 			//edit();
-		case 7:
+		//else if (input == 7)
 			//sort
-		case 8:
+		//else if (input == 8)
 			//rate();
-		case 9:
+		//else if (input == 9)
 			//play();
-		case 10:
+		//else if (input == 10)
 			//shuffle
-		default:
+		else {
 			//exit/bad input
 			return;
 		}
-		printf("1. Load\n2.Store\n3.Display\n4.Insert\n5.Delete\n6.Edit\n7.Sort\n8.Rate\n9.Play\n10.Shuffle\n11.Exit\nEnter your option: ");
+		system("pause");
+		system("cls");
+		printf("1.Load\n2.Store\n3.Display\n4.Insert\n5.Delete\n6.Edit\n7.Sort\n8.Rate\n9.Play\n10.Shuffle\n11.Exit\nEnter your option: ");
 		scanf("%d", &input);
 	}
 }
@@ -41,6 +55,8 @@ int load(FILE *infile, Node **list) {
 		while (!feof(infile)) {
 			char line[150];
 			fgets(line, 150, infile);
+			if (*line == '\0'||*line=='\n')
+				break;
 			if (*line == '\"') {
 				strcpy(temp.artist, strtok(line + 1, "\""));
 			}
@@ -56,7 +72,6 @@ int load(FILE *infile, Node **list) {
 			insertAtFront(list, temp);
 		}
 		success = 1;
-		printList(*list);
 	}
 	return success;
 }
@@ -72,17 +87,32 @@ int insertAtFront(Node **list, Record data) {
 	temp = makeNode(data);
 	if (temp != NULL) {
 		temp->next = *list;
-		temp->prev = NULL;
+		if ((*list) != NULL)
+			(*list)->prev = temp;
 		*list = temp;
-		temp->prev = list;
 		return 1;
 	}
 	return 0;
 }
-void printList(Node *list) {
+void display(Node *list, char *artist) {
 	while (list != NULL) {
 		Record temp = list->song;
-		printf("Artist: %s | Album: %s | Title: %s | Genre: %s | Duration: %d:%d | Times Played: %d | Rating: %d\n\n", temp.artist, temp.album, temp.title, temp.genre, temp.duration.mins, temp.duration.secs, temp.timesPlayed, temp.rating);
+		if (artist == NULL || strcmp(temp.artist, artist) == 0) {
+			printf("Artist: %s | Album: %s | Title: %s | Genre: %s | Duration: %d:%d | Times Played: %d | Rating: %d\n\n", temp.artist, temp.album, temp.title, temp.genre, temp.duration.mins, temp.duration.secs, temp.timesPlayed, temp.rating);
+		}
 		list = list->next;
 	}
+}
+int store(FILE *file, Node *list) {
+	file = fopen("musicPlayList.csv", "w");
+	if (file != NULL) {
+		while (list != NULL) {
+			Record temp = list->song;
+			fprintf(file,"\"%s\",%s,%s,%s,%d:%d,%d,%d\n", temp.artist, temp.album, temp.title, temp.genre, temp.duration.mins, temp.duration.secs, temp.timesPlayed, temp.rating);
+			list = list->next;
+		}
+		fclose(file);
+		return 1;
+	}
+	return 0;
 }
