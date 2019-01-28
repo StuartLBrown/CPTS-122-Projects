@@ -8,6 +8,7 @@ Node *makeNode(Data item) {
 	if (pMem != NULL) {
 		pMem->data = item;
 		pMem->next = NULL;
+		pMem->prev = NULL;
 	}
 	return pMem;
 }
@@ -18,6 +19,9 @@ int insertAtFront(Node **head, Data item) {
 	if (pMem != NULL) {
 		success = 1;
 		pMem->next = *head;
+		if (!isEmpty(head)) {
+			(*head)->prev = pMem;
+		}
 		*head = pMem;
 	}
 	return success;
@@ -39,7 +43,7 @@ int deleteItem(Node **head, Data item) {
 				pTemp->next = pCur->next;
 			}
 			else {//deleting the first item
-				(*head)->next = pCur->next;
+				*head = pCur->next;
 			}
 			//once we find we free it
 			free(pCur);
@@ -65,7 +69,16 @@ int insertInOrder(Node **head, Data item) {
 		mem = makeNode(item);
 		if (mem != NULL) {
 			while (cur != NULL&&cur->data.data < item.data) {
-
+				prev = cur;
+				cur = cur->next;
+			}
+			if (prev != NULL) {
+				prev->next = mem;
+				mem->next = cur;
+			}
+			else {
+				mem->next = *head;
+				*head = mem;
 			}
 		}
 		return success;

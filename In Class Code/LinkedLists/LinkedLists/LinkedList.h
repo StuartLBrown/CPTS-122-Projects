@@ -11,6 +11,7 @@ typedef struct {
 typedef struct node {
 	Data data;
 	struct node *next;
+	struct node *prev;
 }Node;
 void initList(Node **head);
 Node *makeNode(Data item);
