@@ -6,7 +6,7 @@ typedef struct {
 	int secs;
 }Duration;
 typedef struct {
-	char artist[15];
+	char artist[20];
 	char album[25];
 	char title[15];
 	char genre[15];
@@ -34,10 +34,14 @@ int store(FILE *file, Node *list);
 
 //done
 void display(Node *list,char *artist);
-void edit(Node **list);
+void edit(Node **list, char *artist);
 void rate(Node **list);
 void play(Node *list);
 void exit(Node *list, FILE *outfile);
 
 //done
 int insertAtFront(Node **list, Record data);
+
+void displayRecord(Record r);
+
+void editRecord(Record *r, int attribute);
