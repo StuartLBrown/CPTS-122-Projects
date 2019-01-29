@@ -1,0 +1,6 @@
+﻿  stacks.c
+  main.c
+c:\github projects\cpts-122-projects\in class code\stacks\stacks\main.c(7): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  stacks.vcxproj -> C:\Github Projects\CPTS-122-Projects\In Class Code\stacks\Debug\stacks.exe
+  stacks.vcxproj -> C:\Github Projects\CPTS-122-Projects\In Class Code\stacks\Debug\stacks.pdb (Full PDB)
