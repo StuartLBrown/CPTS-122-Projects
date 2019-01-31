@@ -34,10 +34,10 @@ int store(FILE *file, Node *list);
 
 //done
 void display(Node *list,char *artist);
+//done
 void edit(Node **list, char *artist);
 void rate(Node **list);
 void play(Node *list);
-void exit(Node *list, FILE *outfile);
 
 //done
 int insertAtFront(Node **list, Record data);

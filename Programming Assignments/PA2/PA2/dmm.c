@@ -40,11 +40,12 @@ void menu(FILE *infile) {
 			//sort
 		//else if (input == 8)
 			//rate();
-		//else if (input == 9)
-			//play();
+		else if (input == 9)
+			play(list);
 		//else if (input == 10)
 			//shuffle
 		else if (input == 11) {
+			//exit (same thing as store)
 			store(infile, list);
 		}
 		else
@@ -253,4 +254,31 @@ void editRecord(Record *r, int attribute) {
 	}
 	else
 		return;
+}
+void play(Node *list) {
+	system("cls");
+	Node *temp = list;
+	int count=1, index = 0;
+	while (list != NULL) {
+		printf("%d. ",count);
+		displayRecord(list->song);
+		count++;
+		list = list->next;
+	}
+	printf("Select a song to start from: ");
+	scanf("%d", &index);
+	while (index <= 0 || index > count) {
+		printf("Incorrect song to start from, try again");
+		scanf("%d", &index);
+	}
+	system("cls");
+	for (int i = 1; i < index; i++) {
+		temp = temp->next;
+	}
+	for (int i = index; i < count; i++) {
+		displayRecord(temp->song);
+		system("pause");
+		system("cls");
+		temp = temp->next;
+	}
 }
