@@ -36,7 +36,9 @@ int store(FILE *file, Node *list);
 void display(Node *list,char *artist);
 //done
 void edit(Node **list, char *artist);
+
 void rate(Node **list);
+//done
 void play(Node *list);
 
 //done

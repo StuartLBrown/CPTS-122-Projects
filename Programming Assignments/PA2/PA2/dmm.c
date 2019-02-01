@@ -48,8 +48,10 @@ void menu(FILE *infile) {
 			//exit (same thing as store)
 			store(infile, list);
 		}
-		else
+		else {
+			store(infile, list);
 			return;
+		}
 		system("pause");
 		system("cls");
 		printf("1.Load\n2.Store\n3.Display\n4.Insert\n5.Delete\n6.Edit\n7.Sort\n8.Rate\n9.Play\n10.Shuffle\n11.Exit\nEnter your option: ");
@@ -190,7 +192,7 @@ void edit(Node **list, char *artist) {
 			}
 		}
 		else {
-			for (int i = 0; i < count + indices[input-1]; i++) {
+			for (int i = 0; i < indices[0] + indices[input-1]; i++) {
 				temp = temp->next;
 			}
 		}
@@ -281,4 +283,7 @@ void play(Node *list) {
 		system("cls");
 		temp = temp->next;
 	}
+}
+void rate(Node **list) {
+
 }
