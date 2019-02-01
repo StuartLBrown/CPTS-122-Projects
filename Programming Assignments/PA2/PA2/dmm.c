@@ -4,7 +4,7 @@ void menu(FILE *infile) {
 	int input = 0;
 	scanf("%d", &input);
 	Node *list = NULL;
-	while (input !=11) {
+	while (1) {
 		if (input == 1) {
 			if (load(infile, &list))
 				printf("Succesfully loaded songs into list\n");
@@ -38,8 +38,8 @@ void menu(FILE *infile) {
 		}
 		//else if (input == 7)
 			//sort
-		//else if (input == 8)
-			//rate();
+		else if (input == 8)
+			rate(&list);
 		else if (input == 9)
 			play(list);
 		//else if (input == 10)
@@ -47,10 +47,7 @@ void menu(FILE *infile) {
 		else if (input == 11) {
 			//exit (same thing as store)
 			store(infile, list);
-		}
-		else {
-			store(infile, list);
-			return;
+			break;
 		}
 		system("pause");
 		system("cls");
@@ -285,5 +282,32 @@ void play(Node *list) {
 	}
 }
 void rate(Node **list) {
-
+	Node *temp = *list;
+	int count = 0, input = 0;
+	while (input != count + 1) {
+		count = 0;
+		while (temp->next != NULL) {
+			count++;
+			printf("%d. ", count);
+			displayRecord(temp->song);
+			temp = temp->next;
+		}
+		count++;
+		printf("%d. ", count);
+		displayRecord(temp->song);
+		printf("%d. Exit\n\n",count+1);
+		printf("Enter a song to rate: ");
+		scanf("%d", &input);
+		while (input<1 && input>count + 1) {
+			printf("Invalid song try again: ");
+			scanf("%d", &input);
+		}
+		if (input != count + 1) {
+			for (int i = count; i > input; i--)
+				temp = temp->prev;
+			editRecord(&(temp->song), 7);
+			while (temp->prev != NULL)
+				temp = temp->prev;
+		}
+	}
 }
