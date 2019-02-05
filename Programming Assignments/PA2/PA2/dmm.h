@@ -1,3 +1,6 @@
+#ifndef DMM_H
+#define DMM_H
+
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -44,6 +47,14 @@ void play(Node *list);
 //done
 int insertAtFront(Node **list, Record data);
 
+//done
+int insert(Node **list);
+
+//done
+int deleteRecord(Node **list, char *title);
+
 void displayRecord(Record r);
 
+//done
 void editRecord(Record *r, int attribute);
+#endif // !1

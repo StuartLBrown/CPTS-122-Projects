@@ -26,10 +26,16 @@ void menu(FILE *infile) {
 				display(list, name);
 			}
 		}
-		//else if (input == 4)
-			//insert
-		//else if (input == 5)
-			//delete
+		else if (input == 4)
+			insert(&list);
+		else if (input == 5) {
+			char title[15];
+			fseek(stdin, 0, SEEK_END);
+			printf("Enter a song title: ");
+			fgets(title, 15, stdin);
+			strtok(title, "\n");
+			deleteRecord(&list, title);
+		}
 		else if (input == 6) {
 			printf("Enter an artists name (note it is case sensitive): ");
 			char name[20];
@@ -310,4 +316,49 @@ void rate(Node **list) {
 				temp = temp->prev;
 		}
 	}
+}
+int insert(Node **list) {
+	Record r;
+	printf("Enter an artists name: ");
+	scanf(" %s", r.artist);
+	printf("Enter an album title: ");
+	scanf(" %s", r.album);
+	printf("Enter the song title: ");
+	scanf(" %s", r.title);
+	printf("Enter the genre of the song: ");
+	scanf(" %s", r.genre);
+	printf("Enter the song length in minutes: ");
+	scanf("%d", &(r.duration.mins));
+	printf("Enter the song length in seconds: ");
+	scanf("%d", &(r.duration.secs));
+	printf("Enter the song's rating: ");
+	scanf("%d", &(r.rating));
+	printf("Enter the number of times the song has been played: ");
+	scanf("%d", &(r.timesPlayed));
+	return insertAtFront(list, r);
+}
+int deleteRecord(Node **list, char *title) {
+	Node *temp = *list;
+	while (temp != NULL) {
+		if (strcmp(temp->song.title, title) == 0) {
+			if (temp->prev == NULL) {
+				*list = temp->next;
+				free(temp);
+				return 1;
+			}
+			else if (temp->next == NULL) {
+				temp->prev->next = NULL;
+				free(temp);
+				return 1;
+			}
+			else {
+				temp->prev->next = temp->next;
+				temp->next->prev = temp->prev;
+				free(temp);
+				return 1;
+			}
+		}
+		temp = temp->next;
+	}
+	return 0;
 }
