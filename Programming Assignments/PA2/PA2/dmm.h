@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <math.h>
+#include <time.h>
 typedef struct {
 	int mins;
 	int secs;
@@ -57,4 +59,12 @@ void displayRecord(Record r);
 
 //done
 void editRecord(Record *r, int attribute);
+
+int getSize(Node *list);
+
+//precondition:
+//size = size of order
+void shuffle(Node *list, int size, int *order);
+
+int *generatePositions(int size);
 #endif // !1

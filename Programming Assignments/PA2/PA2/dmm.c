@@ -48,8 +48,9 @@ void menu(FILE *infile) {
 			rate(&list);
 		else if (input == 9)
 			play(list);
-		//else if (input == 10)
-			//shuffle
+		else if (input == 10) {
+			shuffle(list, getSize(list), generatePositions(getSize(list)));
+		}
 		else if (input == 11) {
 			//exit (same thing as store)
 			store(infile, list);
@@ -372,4 +373,44 @@ int deleteRecord(Node **list, char *title) {
 		temp = temp->next;
 	}
 	return 0;
+}
+int getSize(Node *list) {
+	int size = 0;
+	for (; list != NULL; size++)
+		list = list->next;
+	return size;
+}
+void shuffle(Node *list, int size, int *order) {
+	system("cls");
+	int curP = *order, index = 0;
+	while (index < size) {
+		if (index != 0)
+			curP = curP - *(order + index - 1);
+		if (curP > 0) {
+			for (int i = 0; i < curP; i++)
+				list = list->next;
+		}
+		else {
+			for (int i = 0; i > curP; i--)
+				list = list->prev;
+		}
+		displayRecord(list->song);
+		system("pause");
+		system("cls");
+		index++;
+		curP = *(order + index);
+	}
+}
+int *generatePositions(int size) {
+	int *vals = (int*)malloc(sizeof(int)*size);
+	for (int i = 0; i < size; i++) {
+		*(vals + i) = i;
+	}
+	for (int i = 0; i < size * 3; i++) {
+		int i1 = rand() % size, i2 = rand() % size;
+		int temp = *(vals + i1);
+		*(vals + i1) = *(vals + i2);
+		*(vals + i2) = temp;
+	}
+	return vals;
 }
