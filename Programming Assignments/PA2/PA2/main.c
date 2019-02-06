@@ -1,7 +1,8 @@
-#include "dmm.h"
+#include "tests.h"
 int main(void) {
 	FILE *file = fopen("musicPlayList.csv", "r");
-	menu(file);
+	test_delete();
+	//menu(file);
 	fclose(file);
 	return 0;
 }

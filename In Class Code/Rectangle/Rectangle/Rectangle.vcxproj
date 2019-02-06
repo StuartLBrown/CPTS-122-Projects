@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{553A3B8E-28FC-4F55-88DC-A2113DED304E}</ProjectGuid>
+    <ProjectGuid>{6CD22502-F34E-4A68-B68E-7ADEE1923BC9}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>PA2</RootNamespace>
+    <RootNamespace>Rectangle</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,16 +142,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="dmm.c" />
-    <ClCompile Include="main.c" />
-    <ClCompile Include="tests.c" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ractangle.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dmm.h" />
-    <ClInclude Include="tests.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="musicPlayList.csv" />
+    <ClInclude Include="rectangle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

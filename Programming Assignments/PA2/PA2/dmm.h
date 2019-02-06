@@ -11,7 +11,7 @@ typedef struct {
 typedef struct {
 	char artist[20];
 	char album[25];
-	char title[15];
+	char title[25];
 	char genre[15];
 	Duration duration;
 	int timesPlayed;

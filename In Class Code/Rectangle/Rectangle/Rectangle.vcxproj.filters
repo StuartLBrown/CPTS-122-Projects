@@ -15,27 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.c">
+    <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dmm.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tests.c">
+    <ClCompile Include="ractangle.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="dmm.h">
+    <ClInclude Include="rectangle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="tests.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="musicPlayList.csv">
-      <Filter>Resource Files</Filter>
-    </None>
   </ItemGroup>
 </Project>

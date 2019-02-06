@@ -96,6 +96,9 @@ Node *makeNode(Record data) {
 	return temp;
 }
 int insertAtFront(Node **list, Record data) {
+	//if in invalid rating or timesplayed is passed into the list, don't put it in the list
+	if (data.timesPlayed < 0 || data.rating < 1 || data.rating>5)
+		return 0;
 	Node *temp = NULL;
 	temp = makeNode(data);
 	if (temp != NULL) {
@@ -229,7 +232,7 @@ void editRecord(Record *r, int attribute) {
 	}
 	else if (attribute == 3) {
 		printf("Enter a new song title: ");
-		char song[15];
+		char song[25];
 		scanf(" %s", song);
 		strcpy(r->title, song);
 	}
@@ -249,12 +252,20 @@ void editRecord(Record *r, int attribute) {
 		printf("Enter the a new number of times played: ");
 		int n = 0;
 		scanf("%d", &n);
+		while (n < 0) {
+			printf("Invalid times played: ");
+			scanf("%d", &n);
+		}
 		r->timesPlayed = n;
 	}
 	else if (attribute == 7) {
 		printf("Enter the a new rating: ");
 		int rating = 0;
 		scanf("%d", &rating);
+		while (rating < 1 || rating>5) {
+			printf("Invalid rating: ");
+			scanf("%d", &rating);
+		}
 		r->rating = rating;
 	}
 	else
