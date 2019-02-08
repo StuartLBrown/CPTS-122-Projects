@@ -62,21 +62,16 @@ void editRecord(Record *r, int attribute);
 
 int getSize(Node *list);
 
-//1 is artist, 2 is album title, 3 is rating, 4 is times played (largest-smallest)
+//1 is artist, 2 is album title, 3 is rating, 4 is times played (largest-smallest) - uses selection sort
 void sortList(Node **list, int attribute);
 
-//list must start at the beginning and indices must be array indices (start at 0)
-void swap(Node **list, int i1, int i2);
-
-//returns the index that the min was found at
-int findMin(Node *list, int attribute);
-
-//used only for times played (have to sort in reverse order) 
-int findMax(Node *list);
+//pointers are to the indexes that need to be swapped
+void swap(Node **list1, Node **list2);
 
 //precondition:
 //size = size of order
 void shuffle(Node *list, int size, int *order);
 
 int *generatePositions(int size);
+
 #endif // !1

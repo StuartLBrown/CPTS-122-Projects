@@ -42,8 +42,18 @@ void menu(FILE *infile) {
 			scanf(" %s", name);
 			edit(&list, name);
 		}
-		//else if (input == 7)
-			//sort
+		else if (input == 7) {
+			printf("Enter an attribute to sort by:\n1.Artist\n2.Album Title\n3.Rating\n4.Times played (largest-smallest)\n");
+			int input = 0;
+			scanf("%d", &input);
+			while (input < 0 && input>4) {
+				printf("Incorrect attribute try again: ");
+				scanf("%d", &input);
+			}
+			system("cls");
+			sortList(&list, input);
+			display(list, NULL);
+		}
 		else if (input == 8)
 			rate(&list);
 		else if (input == 9)
@@ -413,4 +423,31 @@ int *generatePositions(int size) {
 		*(vals + i2) = temp;
 	}
 	return vals;
+}
+void sortList(Node **list, int attribute) {
+	int size = getSize(*list);
+	Node *curr = *list;
+	for (int i = 0; i < size; i++) {
+		Node *temp = curr->next, *min = curr;
+		for (int j = i + 1; j < size; j++) {
+			if (temp != NULL) {
+				if (attribute == 1 && strcmp(temp->song.artist, min->song.artist) < 0)
+					min = temp;
+				else if (attribute == 2 && strcmp(temp->song.album, min->song.album) < 0)
+					min = temp;
+				else if (attribute == 3 && temp->song.rating < min->song.rating)
+					min = temp;
+				else if (attribute == 4 && temp->song.timesPlayed > min->song.timesPlayed)
+					min = temp;
+				temp = temp->next;
+			}
+		}
+		swap(&curr, &min);
+		curr = curr->next;
+	}
+}
+void swap(Node **list1, Node **list2) {
+	Record temp = (*list1)->song;
+	(*list1)->song = (*list2)->song;
+	(*list2)->song = temp;
 }
