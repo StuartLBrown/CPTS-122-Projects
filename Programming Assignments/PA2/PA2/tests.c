@@ -26,3 +26,16 @@ void test_delete(void) {
 			printf("Passed delete\n");
 	}
 }
+void test_shuffle(void) {
+	Node *temp = { NULL };
+	Duration d = { 3,30 };
+	Record r1 = { "1","1","1","1",d,1,1 }, r2 = { "2","2","2","2",d,2,2 }, r3 = { "3","3","3","3",d,3,3 };
+	int order[3] = { 3,2,1 };
+	insertAtFront(&temp, r3);
+	insertAtFront(&temp, r2);
+	insertAtFront(&temp, r1);
+	if (temp != NULL) {
+		shuffle(temp, 3, order);
+		printf("Passed shuffle\n");
+	}
+}
