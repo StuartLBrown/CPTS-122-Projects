@@ -2,6 +2,13 @@
 #include <iostream>
 class Rectangle {
 public:
+	//constructor
+	Rectangle();//default
+	//Rectangle(int length, int width);//constructor w/ parameters
+	Rectangle(int length = 0, int width = 0);//default values - can only use in decleration
+
+	~Rectangle();//destructor - free up resources, clean up streams
+
 	//member functions - operations
 	//getters - accessors
 	int getLength();
