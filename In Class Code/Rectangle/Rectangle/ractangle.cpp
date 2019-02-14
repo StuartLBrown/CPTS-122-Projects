@@ -1,13 +1,13 @@
 #include "rectangle.h"
 //what class this function belongs to
-Rectangle::Rectangle() {
-	length = 0;
-	width = 0;
-}
-
 Rectangle::Rectangle(int length, int width) {
 	setLength(length);
 	setWidth(width);
+}
+
+Rectangle::Rectangle(Rectangle &r) {
+	length = r.length;
+	width = r.width;
 }
 
 Rectangle::~Rectangle() {
@@ -32,4 +32,15 @@ void Rectangle::setWidth(int width) {
 		Rectangle::width = width;
 	else
 		Rectangle::width = 0;
+}
+void Rectangle::printRectangle(void) {
+	std::cout << "Length: " << length << "\nWidth: " << width << std::endl;
+}
+void printRectangle(Rectangle r) {//copy of a rectangle is made
+	r.printRectangle();
+}
+
+std::ostream &operator<<(std::ostream &lhs, Rectangle &rhs) {
+	lhs << rhs.getLength() << " " << rhs.getWidth();
+	return lhs;
 }

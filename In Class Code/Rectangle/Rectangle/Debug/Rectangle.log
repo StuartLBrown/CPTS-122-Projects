@@ -1,6 +1,6 @@
-﻿  main.cpp
+﻿  ractangle.cpp
+  main.cpp
   Generating Code...
-  Skipping... (no relevant changes detected)
-  ractangle.cpp
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   Rectangle.vcxproj -> C:\Github Projects\CPTS-122-Projects\In Class Code\Rectangle\Debug\Rectangle.exe
   Rectangle.vcxproj -> C:\Github Projects\CPTS-122-Projects\In Class Code\Rectangle\Debug\Rectangle.pdb (Full PDB)
