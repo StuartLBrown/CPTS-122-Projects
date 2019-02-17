@@ -21,9 +21,21 @@
     <ClCompile Include="fitness.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="excercise.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="diet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fitness.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="diet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="excercise.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
