@@ -36,16 +36,33 @@ string ExcercisePlan::getName(void) {
 string ExcercisePlan::getDate(void) {
 	return date;
 }
-int ExcercisePlan::editGoal(void) {
+void ExcercisePlan::editGoal(void) {
 	int newGoal = 0;
 	while (newGoal <= 0) {
 		cout << "Enter a new number of steps: ";
 		cin >> newGoal;
 	}
 	goal_steps = newGoal;
+	cout << *this;
 }
-std::ostream &operator<<(std::ostream &lhs, const ExcercisePlan &rhs) {
+ostream &operator<<(ostream &lhs, const ExcercisePlan &rhs) {
 	ExcercisePlan p = rhs;
-	lhs << "Steps: " << p.getSteps() << " | Plan Name: " << p.getName().c_str() << " | Plan Date: " << p.getDate().c_str() << std::endl;
+	lhs << "Steps: " << p.getSteps() << " | Plan Name: " << p.getName() << " | Plan Date: " << p.getDate() << std::endl;
+	return lhs;
+}
+ifstream &operator >> (ifstream &lhs, ExcercisePlan &rhs) {
+	string temp = "";
+	std::getline(lhs, temp);
+	rhs.setName(temp);
+	std::getline(lhs, temp);
+	rhs.setSteps(std::stoi(temp));
+	std::getline(lhs, temp);
+	rhs.setDate(temp);
+	std::getline(lhs, temp);
+	return lhs;
+}
+ofstream &operator<<(ofstream &lhs, const ExcercisePlan &rhs) {
+	ExcercisePlan temp = rhs;
+	lhs << temp.getName() << "\n" << temp.getSteps() << "\n" << temp.getDate() << std::endl;
 	return lhs;
 }

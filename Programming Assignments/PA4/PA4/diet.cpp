@@ -1,7 +1,4 @@
 #include "diet.h"
-#include <string>
-using std::fstream;
-using std::ostream;
 DietPlan::DietPlan(int calories, string name_, string date_) {
 	if (calories >= 0)
 		goal_calories = calories;
@@ -39,13 +36,33 @@ string DietPlan::getName(void) {
 string DietPlan::getDate(void) {
 	return date;
 }
+void DietPlan::editGoal(void) {
+	int newGoal = 0;
+	while (newGoal <= 0) {
+		cout << "Enter a new number of calories: ";
+		cin >> newGoal;
+	}
+	goal_calories = newGoal;
+	cout << *this;
+}
 ostream &operator<<(ostream &lhs, const DietPlan &rhs) {
 	DietPlan p = rhs;
-	lhs << "Calories: " << p.getCalories() << " | Plan Name: " << p.getName().c_str() << " | Plan Date: " << p.getDate().c_str() << std::endl;
+	lhs << "Calories: " << p.getCalories() << " | Plan Name: " << p.getName() << " | Plan Date: " << p.getDate() << std::endl;
 	return lhs;
 }
-fstream &operator>>(fstream &lhs, DietPlan &rhs) {
-	string temp;
-	fstream >> temp;
+ifstream &operator>>(ifstream &lhs, DietPlan &rhs) {
+	string temp = "";
+	std::getline(lhs, temp);
+	rhs.setName(temp);
+	std::getline(lhs, temp);
+	rhs.setCalories(std::stoi(temp));
+	std::getline(lhs, temp);
+	rhs.setDate(temp);
+	std::getline(lhs, temp);
+	return lhs;
+}
+ofstream &operator<<(ofstream &lhs, const DietPlan &rhs) {
+	DietPlan temp = rhs;
+	lhs << temp.getName() << "\n" << temp.getCalories() << "\n" << temp.getDate() << std::endl;
 	return lhs;
 }

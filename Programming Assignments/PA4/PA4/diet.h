@@ -1,9 +1,13 @@
 #pragma once
 #include <iostream>
 #include <string>
+#include <fstream>
 using std::string;
 using std::cout;
 using std::cin;
+using std::ifstream;
+using std::ostream;
+using std::ofstream;
 class DietPlan {
 public:
 	DietPlan(int calories = 0, string name_= "", string date_ = "");
@@ -15,9 +19,11 @@ public:
 	int getCalories(void);
 	string getName(void);
 	string getDate(void);
+	void editGoal(void);
 private:
 	int goal_calories;
 	string name, date;
 };
-std::ostream &operator<<(std::ostream &lhs, const DietPlan &rhs);
-std::ifstream &operator>>(std::ifstream &lhs, const DietPlan &rhs);
+ostream &operator<<(ostream &lhs, const DietPlan &rhs);
+ifstream &operator>>(ifstream &lhs, DietPlan &rhs);
+ofstream &operator<<(ofstream &lhs, const DietPlan &rhs);
