@@ -1,5 +1,6 @@
 #include "fitness.h"
 int main(void) {
-	std::ifstream stream("data.txt");
+	FitnessAppWrapper temp;
+	temp.runApp();
 	return 0;
 }

@@ -12,9 +12,6 @@ ExcercisePlan::ExcercisePlan(const ExcercisePlan &plan) {
 	name = plan.name;
 	date = plan.date;
 }
-ExcercisePlan::~ExcercisePlan(void) {
-	delete this;
-}
 void ExcercisePlan::setSteps(int steps) {
 	if (steps < 0)
 		goal_steps = 0;
@@ -50,7 +47,7 @@ ostream &operator<<(ostream &lhs, const ExcercisePlan &rhs) {
 	lhs << "Steps: " << p.getSteps() << " | Plan Name: " << p.getName() << " | Plan Date: " << p.getDate() << std::endl;
 	return lhs;
 }
-ifstream &operator >> (ifstream &lhs, ExcercisePlan &rhs) {
+fstream &operator >> (fstream &lhs, ExcercisePlan &rhs) {
 	string temp = "";
 	std::getline(lhs, temp);
 	rhs.setName(temp);
@@ -61,7 +58,7 @@ ifstream &operator >> (ifstream &lhs, ExcercisePlan &rhs) {
 	std::getline(lhs, temp);
 	return lhs;
 }
-ofstream &operator<<(ofstream &lhs, const ExcercisePlan &rhs) {
+fstream &operator<<(fstream &lhs, const ExcercisePlan &rhs) {
 	ExcercisePlan temp = rhs;
 	lhs << temp.getName() << "\n" << temp.getSteps() << "\n" << temp.getDate() << std::endl;
 	return lhs;
