@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <fstream>//fstream, ifstream, ofstream
 class Rectangle {
 public:
 	//constructor
