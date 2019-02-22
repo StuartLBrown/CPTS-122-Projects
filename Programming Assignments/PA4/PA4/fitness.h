@@ -5,10 +5,8 @@ class FitnessAppWrapper {
 private:
 	ExcercisePlan ePlan[7];
 	DietPlan dPlan[7];
-	ifstream ifExcercise;
-	ofstream ofExcercise;
-	ifstream ifDiet;
-	ofstream ofDiet;
+	fstream fExcercise;
+	fstream fDiet;
 public:
 	void displayMenu(void);
 	void displayPlan(DietPlan _dPlan[7]);

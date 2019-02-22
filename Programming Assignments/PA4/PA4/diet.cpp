@@ -46,7 +46,7 @@ ostream &operator<<(ostream &lhs, const DietPlan &rhs) {
 	lhs << "Calories: " << rhs.getCalories() << " | Plan Name: " << rhs.getName() << " | Plan Date: " << rhs.getDate() << std::endl;
 	return lhs;
 }
-ifstream &operator>>(ifstream &lhs, DietPlan &rhs) {
+fstream &operator >> (fstream &lhs, DietPlan &rhs) {
 	string temp = "";
 	std::getline(lhs, temp);
 	rhs.setName(temp);
@@ -57,7 +57,7 @@ ifstream &operator>>(ifstream &lhs, DietPlan &rhs) {
 	std::getline(lhs, temp);
 	return lhs;
 }
-ofstream &operator<<(ofstream &lhs, const DietPlan &rhs) {
+fstream &operator<<(fstream &lhs, const DietPlan &rhs) {
 	lhs << rhs.getName() << "\n" << rhs.getCalories() << "\n" << rhs.getDate() << "\n  "<<std::endl;
 	return lhs;
 }

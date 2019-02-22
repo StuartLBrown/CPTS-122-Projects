@@ -5,8 +5,7 @@
 using std::string;
 using std::cout;
 using std::cin;
-using std::ifstream;
-using std::ofstream;
+using std::fstream;
 using std::ostream;
 class ExcercisePlan {
 public:
@@ -24,5 +23,5 @@ private:
 	string name, date;
 };
 ostream &operator<<(ostream &lhs, const ExcercisePlan &rhs);
-ifstream &operator>>(ifstream &lhs, ExcercisePlan &rhs);
-ofstream &operator<<(ofstream &lhs, const ExcercisePlan &rhs);
+fstream &operator>>(fstream &lhs, ExcercisePlan &rhs);
+fstream &operator<<(fstream &lhs, const ExcercisePlan &rhs);

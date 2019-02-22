@@ -78,40 +78,40 @@ void FitnessAppWrapper::displayPlan(ExcercisePlan _ePlan[7]) {
 		cout << _ePlan[i];
 }
 void FitnessAppWrapper::storeDailyPlan(DietPlan &dietPlan) {
-	ofDiet << dietPlan;
+	fDiet << dietPlan;
 }
 void FitnessAppWrapper::storeDailyPlan(ExcercisePlan &excercisePlan) {
-	ofExcercise << excercisePlan;
+	fExcercise << excercisePlan;
 }
 void FitnessAppWrapper::storeWeeklyPlan(DietPlan _dPlan[7]) {
-	ofDiet.open("diet.txt");
+	fDiet.open("diet.txt",fstream::out);
 	for (int i = 0; i < 7; i++)
 		storeDailyPlan(_dPlan[i]);
-	ofDiet.close();
+	fDiet.close();
 }
 void FitnessAppWrapper::storeWeeklyPlan(ExcercisePlan _ePlan[7]) {
-	ofExcercise.open("excercise.txt");
+	fExcercise.open("excercise.txt",fstream::out);
 	for (int i = 0; i < 7; i++)
 		storeDailyPlan(_ePlan[i]);
-	ofExcercise.close();
+	fExcercise.close();
 }
 void FitnessAppWrapper::loadDailyPlan(DietPlan &dietPlan) {
-	ifDiet >> dietPlan;
+	fDiet >> dietPlan;
 }
 void FitnessAppWrapper::loadDailyPlan(ExcercisePlan &excercisePlan) {
-	ifExcercise >> excercisePlan;
+	fExcercise >> excercisePlan;
 }
 void FitnessAppWrapper::loadWeeklyPlan(DietPlan _dPlan[7]) {
-	ifDiet.open("diet.txt");
+	fDiet.open("diet.txt",fstream::in);
 	for (int i = 0; i < 7; i++)
 		loadDailyPlan(_dPlan[i]);
-	ifDiet.close();
+	fDiet.close();
 }
 void FitnessAppWrapper::loadWeeklyPlan(ExcercisePlan _ePlan[7]) {
-	ifExcercise.open("excercise.txt");
+	fExcercise.open("excercise.txt",fstream::in);
 	for (int i = 0; i < 7; i++)
 		loadDailyPlan(_ePlan[i]);
-	ifExcercise.close();
+	fExcercise.close();
 }
 void FitnessAppWrapper::runApp(void) {
 	displayMenu();
