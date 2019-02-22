@@ -5,8 +5,9 @@
 using std::string;
 using std::cout;
 using std::cin;
-using std::fstream;
+using std::ofstream;
 using std::ostream;
+using std::ifstream;
 class DietPlan {
 public:
 	DietPlan(int calories = 0, string name_= "", string date_ = "");
@@ -14,14 +15,14 @@ public:
 	void setCalories(int calories);
 	void setName(string name_);
 	void setDate(string date_);
-	int getCalories(void);
-	string getName(void);
-	string getDate(void);
+	int getCalories(void) const;
+	string getName(void) const;
+	string getDate(void) const;
 	void editGoal(void);
 private:
 	int goal_calories;
 	string name, date;
 };
 ostream &operator<<(ostream &lhs, const DietPlan &rhs);
-fstream &operator>>(fstream &lhs, DietPlan &rhs);
-fstream &operator<<(fstream &lhs, const DietPlan &rhs);
+ifstream &operator>>(ifstream &lhs, DietPlan &rhs);
+ofstream &operator<<(ofstream &lhs, const DietPlan &rhs);

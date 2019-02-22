@@ -8,9 +8,7 @@ ExcercisePlan::ExcercisePlan(int steps, string name_, string date_) {
 	date = date_;
 }
 ExcercisePlan::ExcercisePlan(const ExcercisePlan &plan) {
-	goal_steps = plan.goal_steps;
-	name = plan.name;
-	date = plan.date;
+	*this = plan;
 }
 void ExcercisePlan::setSteps(int steps) {
 	if (steps < 0)
@@ -24,13 +22,13 @@ void ExcercisePlan::setName(string name_) {
 void ExcercisePlan::setDate(string date_) {
 	date = date_;
 }
-int ExcercisePlan::getSteps(void) {
+int ExcercisePlan::getSteps(void) const{
 	return goal_steps;
 }
-string ExcercisePlan::getName(void) {
+string ExcercisePlan::getName(void) const{
 	return name;
 }
-string ExcercisePlan::getDate(void) {
+string ExcercisePlan::getDate(void) const{
 	return date;
 }
 void ExcercisePlan::editGoal(void) {
@@ -43,11 +41,10 @@ void ExcercisePlan::editGoal(void) {
 	cout << *this;
 }
 ostream &operator<<(ostream &lhs, const ExcercisePlan &rhs) {
-	ExcercisePlan p = rhs;
-	lhs << "Steps: " << p.getSteps() << " | Plan Name: " << p.getName() << " | Plan Date: " << p.getDate() << std::endl;
+	lhs << "Steps: " << rhs.getSteps() << " | Plan Name: " << rhs.getName() << " | Plan Date: " << rhs.getDate() << std::endl;
 	return lhs;
 }
-fstream &operator >> (fstream &lhs, ExcercisePlan &rhs) {
+ifstream &operator>>(ifstream &lhs, ExcercisePlan &rhs) {
 	string temp = "";
 	std::getline(lhs, temp);
 	rhs.setName(temp);
@@ -58,8 +55,7 @@ fstream &operator >> (fstream &lhs, ExcercisePlan &rhs) {
 	std::getline(lhs, temp);
 	return lhs;
 }
-fstream &operator<<(fstream &lhs, const ExcercisePlan &rhs) {
-	ExcercisePlan temp = rhs;
-	lhs << temp.getName() << "\n" << temp.getSteps() << "\n" << temp.getDate() << std::endl;
+ofstream &operator<<(ofstream &lhs, const ExcercisePlan &rhs) {
+	lhs << rhs.getName() << "\n" << rhs.getSteps() << "\n" << rhs.getDate() << "\n  "<<std::endl;
 	return lhs;
 }

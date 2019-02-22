@@ -24,13 +24,13 @@ void DietPlan::setName(string name_) {
 void DietPlan::setDate(string date_) {
 	date = date_;
 }
-int DietPlan::getCalories(void) {
+int DietPlan::getCalories(void) const{
 	return goal_calories;
 }
-string DietPlan::getName(void) {
+string DietPlan::getName(void) const{
 	return name;
 }
-string DietPlan::getDate(void) {
+string DietPlan::getDate(void) const{
 	return date;
 }
 void DietPlan::editGoal(void) {
@@ -43,11 +43,10 @@ void DietPlan::editGoal(void) {
 	cout << *this;
 }
 ostream &operator<<(ostream &lhs, const DietPlan &rhs) {
-	DietPlan p = rhs;
-	lhs << "Calories: " << p.getCalories() << " | Plan Name: " << p.getName() << " | Plan Date: " << p.getDate() << std::endl;
+	lhs << "Calories: " << rhs.getCalories() << " | Plan Name: " << rhs.getName() << " | Plan Date: " << rhs.getDate() << std::endl;
 	return lhs;
 }
-fstream &operator>>(fstream &lhs, DietPlan &rhs) {
+ifstream &operator>>(ifstream &lhs, DietPlan &rhs) {
 	string temp = "";
 	std::getline(lhs, temp);
 	rhs.setName(temp);
@@ -58,8 +57,7 @@ fstream &operator>>(fstream &lhs, DietPlan &rhs) {
 	std::getline(lhs, temp);
 	return lhs;
 }
-fstream &operator<<(fstream &lhs, const DietPlan &rhs) {
-	DietPlan temp = rhs;
-	lhs << temp.getName() << "\n" << temp.getCalories() << "\n" << temp.getDate() << std::endl;
+ofstream &operator<<(ofstream &lhs, const DietPlan &rhs) {
+	lhs << rhs.getName() << "\n" << rhs.getCalories() << "\n" << rhs.getDate() << "\n  "<<std::endl;
 	return lhs;
 }
