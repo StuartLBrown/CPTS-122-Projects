@@ -1,3 +1,6 @@
-﻿  fitness.cpp
-  PA4.vcxproj -> C:\Users\solar\Documents\GitHub\CPTS-122-Projects\Programming Assignments\PA4\Debug\PA4.exe
-  PA4.vcxproj -> C:\Users\solar\Documents\GitHub\CPTS-122-Projects\Programming Assignments\PA4\Debug\PA4.pdb (Full PDB)
+﻿  main.cpp
+c:\github projects\cpts-122-projects\programming assignments\pa4\pa4\main.cpp(3): warning C4930: 'FitnessAppWrapper temp(void)': prototyped function not called (was a variable definition intended?)
+  fitness.cpp
+  Generating Code...
+  PA4.vcxproj -> C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA4\Debug\PA4.exe
+  PA4.vcxproj -> C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA4\Debug\PA4.pdb (Full PDB)

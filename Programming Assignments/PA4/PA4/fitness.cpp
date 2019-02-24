@@ -1,4 +1,13 @@
 #include "fitness.h"
+FitnessAppWrapper::~FitnessAppWrapper(void) {
+	fExcercise.close();
+	fDiet.close();
+}
+FitnessAppWrapper::FitnessAppWrapper(string dFile, string eFile) {
+	fDiet.open(dFile, fstream::in);
+	fExcercise.open(eFile, fstream::in);
+	displayMenu();
+}
 void FitnessAppWrapper::displayMenu(void) {
 	int input = 1;
 	while (input > 0 && input < 9) {
@@ -112,7 +121,4 @@ void FitnessAppWrapper::loadWeeklyPlan(ExcercisePlan _ePlan[7]) {
 	for (int i = 0; i < 7; i++)
 		loadDailyPlan(_ePlan[i]);
 	fExcercise.close();
-}
-void FitnessAppWrapper::runApp(void) {
-	displayMenu();
 }

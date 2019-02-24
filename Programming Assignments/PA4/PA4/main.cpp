@@ -1,6 +1,5 @@
 #include "fitness.h"
 int main(void) {
-	FitnessAppWrapper temp;
-	temp.runApp();
+	FitnessAppWrapper temp();
 	return 0;
 }

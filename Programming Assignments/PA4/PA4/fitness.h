@@ -8,6 +8,8 @@ private:
 	fstream fExcercise;
 	fstream fDiet;
 public:
+	~FitnessAppWrapper(void);
+	FitnessAppWrapper(string dFile = "diet.txt", string eFile = "excercise.txt");
 	void displayMenu(void);
 	void displayPlan(DietPlan _dPlan[7]);
 	void displayPlan(ExcercisePlan _ePlan[7]);
@@ -19,5 +21,4 @@ public:
 	void loadDailyPlan(ExcercisePlan &excercisePlan);
 	void loadWeeklyPlan(DietPlan _dPlan[7]);
 	void loadWeeklyPlan(ExcercisePlan _ePlan[7]);
-	void runApp(void);
 };
