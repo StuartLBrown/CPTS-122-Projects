@@ -1,5 +1,6 @@
 #include "diet.h"
 DietPlan::DietPlan(int calories, string name_, string date_) {
+	//verifies that the calories>0
 	if (calories >= 0)
 		goal_calories = calories;
 	else
@@ -8,11 +9,13 @@ DietPlan::DietPlan(int calories, string name_, string date_) {
 	date = date_;
 }
 DietPlan::DietPlan(const DietPlan &plan) {
-	goal_calories = plan.goal_calories;
-	name = plan.name;
-	date = plan.date;
+	//copy constructor
+	goal_calories = plan.getCalories();
+	name = plan.getName();
+	date = plan.getDate();
 }
 void DietPlan::setCalories(int calories) {
+	//verifies that the calories is >0
 	if (calories < 0)
 		goal_calories = 0;
 	else
@@ -35,22 +38,27 @@ string DietPlan::getDate(void) const{
 }
 void DietPlan::editGoal(void) {
 	int newGoal = 0;
+	//user input verifier
 	while (newGoal <= 0) {
 		cout << "Enter a new number of calories: ";
 		cin >> newGoal;
 	}
 	goal_calories = newGoal;
+	//printing the new plan
 	cout << *this;
 }
 ostream &operator<<(ostream &lhs, const DietPlan &rhs) {
+	//printing the plan
 	lhs << "Calories: " << rhs.getCalories() << " | Plan Name: " << rhs.getName() << " | Plan Date: " << rhs.getDate() << std::endl;
 	return lhs;
 }
 fstream &operator >> (fstream &lhs, DietPlan &rhs) {
 	string temp = "";
+	//getting each line for putting it into the plan
 	std::getline(lhs, temp);
 	rhs.setName(temp);
 	std::getline(lhs, temp);
+	//converting the string into an int
 	rhs.setCalories(std::stoi(temp));
 	std::getline(lhs, temp);
 	rhs.setDate(temp);
@@ -58,6 +66,7 @@ fstream &operator >> (fstream &lhs, DietPlan &rhs) {
 	return lhs;
 }
 fstream &operator<<(fstream &lhs, const DietPlan &rhs) {
-	lhs << rhs.getName() << "\n" << rhs.getCalories() << "\n" << rhs.getDate() << "\n  "<<std::endl;
+	//writing to the file
+	lhs << rhs.getName() << "\n" << rhs.getCalories() << "\n" << rhs.getDate() << "\n  " << std::endl;
 	return lhs;
 }

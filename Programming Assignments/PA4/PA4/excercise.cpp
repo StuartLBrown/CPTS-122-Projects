@@ -1,4 +1,5 @@
 #include "excercise.h"
+//note all of these functions are functionally the same as diet.cpp just with different names
 ExcercisePlan::ExcercisePlan(int steps, string name_, string date_) {
 	if (steps >= 0)
 		goal_steps = steps;
