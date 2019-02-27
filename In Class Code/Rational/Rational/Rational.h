@@ -11,6 +11,7 @@ using std::cout; // we can now use cout without explicitly writing std::cout
 using std::cin;
 using std::endl;
 using std::fstream;
+using std::ostream;
 
 // Blueprint for a rational number
 class Rational{
@@ -51,3 +52,12 @@ private:
 };
 
 fstream &operator >> (fstream &lhs, Rational &rhs);
+ostream &operator << (ostream &lhs, const Rational &rhs);
+Rational operator + (const Rational &lhs, const Rational &rhs);
+
+//generic function - allows for multiple types in a single function
+//must go in header files (including decleration and definition)
+template <class T>//typename
+T add(const T &num1,const T &num2) {
+	return num1 + num2;//overloaded operator for each type T
+}

@@ -80,3 +80,13 @@ fstream &operator >> (fstream &lhs, Rational &rhs) {
 	rhs.setNumerator(temp);
 	return lhs;
 }
+
+ostream &operator << (ostream &lhs, const Rational &rhs) {
+	lhs << rhs.getNumerator() << "/" << rhs.getDenominator();
+	return lhs;
+}
+
+Rational operator + (const Rational &lhs, const Rational &rhs) {
+	Rational temp(lhs.getNumerator()*rhs.getDenominator() + rhs.getNumerator()*lhs.getDenominator(), rhs.getDenominator()*lhs.getDenominator());
+	return temp;
+}
