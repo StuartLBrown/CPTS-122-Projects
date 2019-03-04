@@ -29,6 +29,6 @@ void Data::setTTime(int time) {
 }
 
 ostream &operator<<(ostream &lhs, const Data &rhs) {
-	lhs << "Customer Number: " << rhs.getCNumber() << "\nService Time: " << rhs.getSTime() << " mins\nTotal Time: " << rhs.getTTime() << " mins" << std::endl;
-	return lhs
+	lhs << "Customer Number: " << rhs.getCNumber() << "\nService Time: " << rhs.getSTime() << " mins\nTotal Time: " << rhs.getTTime() << " mins";
+	return lhs;
 }
