@@ -1,7 +1,7 @@
 #include "node.h"
-Node::Node(Node &copy) {
-	data = copy.data;
-	next = copy.next;
+Node::Node(Node *copy) {
+	this->data = copy->data;
+	this->next = copy->next;
 }
 Node::Node(const Data *data) {
 	this->data = new Data(data);
