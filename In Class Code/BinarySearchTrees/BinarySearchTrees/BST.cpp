@@ -49,6 +49,6 @@ void BST::inOrderTraversal(Node *tree) {
 	if (tree != nullptr) {
 		inOrderTraversal(tree->getLeft());
 		cout << tree->getData() << endl;
-		inOrderTraversal(tree->getRight());
+		inOrderTraversal(tree->getRight);
 	}
 }
