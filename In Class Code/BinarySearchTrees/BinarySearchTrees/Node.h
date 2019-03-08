@@ -1,5 +1,5 @@
 #include <iostream>
-template <class T>
+template <class T>//can define multiple types for the template
 class Node {
 public:
 	Node(T *newData = nullptr);
@@ -38,7 +38,7 @@ Node<T> *Node<T>::getLeft() {
 	return left;
 }
 template <class T>
-int Node<T>::getData() {
+T Node<T>::getData() {
 	return *data;
 }
 template <class T>
