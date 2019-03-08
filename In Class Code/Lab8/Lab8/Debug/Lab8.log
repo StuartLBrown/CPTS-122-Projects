@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\github projects\cpts-122-projects\in class code\lab8\lab8\bst.h(120): warning C4172: returning address of local variable or temporary: names
+  Lab8.vcxproj -> C:\Github Projects\CPTS-122-Projects\In Class Code\Lab8\Debug\Lab8.exe
+  Lab8.vcxproj -> C:\Github Projects\CPTS-122-Projects\In Class Code\Lab8\Debug\Lab8.pdb (Full PDB)
