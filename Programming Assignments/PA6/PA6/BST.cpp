@@ -25,7 +25,7 @@ BST::BST(string fileName, string fileName2) {
 }
 //standard destructor
 BST::~BST() {
-	//destroy(this->head);
+	destroy(this->head);
 }
 void BST::insert(char chr, string morse) {
 	insert(chr, morse, this->head);
@@ -66,7 +66,11 @@ bool BST::search(char chr) const{
 	return search(chr, this->head);
 }
 void BST::destroy(BSTNode<char, string> *curr) {
-
+	if (curr != nullptr) {
+		destroy(curr->getLeft());
+		destroy(curr->getRight());
+		delete curr;
+	}
 }
 void BST::insert(char chr, string morse, BSTNode<char, string> *curr) {
 	//empty tree
