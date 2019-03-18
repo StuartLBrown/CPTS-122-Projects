@@ -1,2 +1,2 @@
-This is a test of the cpts 122
-Morse code conversion tool.
+THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
+1234567890 ?,.

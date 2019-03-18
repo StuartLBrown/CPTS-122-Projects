@@ -1,6 +1,7 @@
 #include "BST.h"
 //standard constructor
 BST::BST(string fileName, string fileName2) {
+	this->head = nullptr;
 	fstream infile;
 	if (fileName == "")
 		infile.open("MorseTable.txt", fstream::in);
@@ -18,12 +19,6 @@ BST::BST(string fileName, string fileName2) {
 	}
 	printTree(this->head);
 	infile.close();
-	if (fileName2 == "")
-		infile.open("Convert.txt", fstream::in);
-	else
-		infile.open(fileName2, fstream::in);
-	convertToMorse(infile);
-	infile.close();
 }
 //standard destructor
 BST::~BST() {
@@ -32,11 +27,32 @@ BST::~BST() {
 void BST::insert(char chr, string morse) {
 	insert(chr, morse, this->head);
 }
-void BST::printTree() {
+void BST::printTree() const{
 	printTree(this->head);
 }
+void BST::searchFile(string fileName) const{
+	fstream infile;
+	if (fileName != "")
+		infile.open(fileName, fstream::in);
+	else
+		infile.open("Convert.txt", fstream::in);
+	while (!infile.eof()) {
+		char line[100];
+		infile.getline(line, 100);
+		for (int i = 0; line[i] != '\0'; i++) {
+			if (line[i] == '\n')
+				cout << endl;
+			else if (line[i] == ' ')
+				cout << " ";
+			else
+				search(std::toupper(line[i]));
+		}
+		cout << endl;
+	}
+	infile.close();
+}
 //prints the morse string of the character searched for, if it is found
-bool BST::search(char chr) {
+bool BST::search(char chr) const{
 	return search(chr, this->head);
 }
 void BST::destroy(BSTNode<char, string> *curr) {
@@ -47,7 +63,7 @@ void BST::insert(char chr, string morse, BSTNode<char, string> *curr) {
 	if (curr == nullptr)
 		head = new BSTNode<char, string>(chr, morse);
 	else {
-		if (curr->getData1() < chr) {
+		if (curr->getData1() > chr) {
 			//inserting data into the left node
 			if (curr->getLeft() == nullptr)
 				curr->setLeft(new BSTNode<char, string>(chr, morse));
@@ -55,7 +71,7 @@ void BST::insert(char chr, string morse, BSTNode<char, string> *curr) {
 			else
 				insert(chr, morse, curr->getLeft());
 		}
-		else if (curr->getData1() > chr) {
+		else if (curr->getData1() < chr) {
 			//inserting data into the right node
 			if (curr->getRight() == nullptr)
 				curr->setRight(new BSTNode<char, string>(chr, morse));
@@ -68,7 +84,7 @@ void BST::insert(char chr, string morse, BSTNode<char, string> *curr) {
 			std::cout << "Duplicate data found!\n";
 	}
 }
-void BST::printTree(BSTNode<char, string> *curr) {
+void BST::printTree(BSTNode<char, string> *curr) const{
 	//using the inOrderTraversal algorithm
 	if (curr != nullptr) {
 		printTree(curr->getLeft());
@@ -93,21 +109,18 @@ void BST::convertToMorse(fstream &infile) {
 		}
 	}
 }
-bool BST::search(char chr, BSTNode<char, string> *curr) {
+bool BST::search(char chr, BSTNode<char, string> *curr) const{
 	//using inOrderTraveral algorithm
 	//couldn't find the data
-	if (curr == nullptr)
-		return false;
-	else {
-		//found the data
-		if (curr->getData1() == chr) {
-			cout << curr->getData2() << "   ";
-			return true;
-		}
-		//continue down the tree
-		else if (curr->getData1() > chr)
-			return search(chr, curr->getLeft());
-		else
-			return search(chr, curr->getRight());
+	if (curr == nullptr || curr->getData1() == chr) {
+		cout << curr->getData2()<<"   ";
+		return true;
 	}
+	if (curr->getData1() < chr)
+		return search(chr, curr->getRight());
+	return search(chr, curr->getLeft());
+}
+ostream &operator<<(ostream &lhs, BSTNode<char, string> *rhs) {
+	lhs << rhs->getData1() << " = " << rhs->getData2() << endl;
+	return lhs;
 }

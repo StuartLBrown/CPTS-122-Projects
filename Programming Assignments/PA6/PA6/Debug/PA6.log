@@ -1,3 +1,7 @@
-﻿  main.cpp
-  PA6.vcxproj -> C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA6\Debug\PA6.exe
-  PA6.vcxproj -> C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA6\Debug\PA6.pdb (Full PDB)
+﻿  BST.cpp
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa6\pa6\bst.cpp(14): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa6\pa6\bst.cpp(16): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+  PA6.vcxproj -> C:\Users\solar\Documents\GitHub\CPTS-122-Projects\Programming Assignments\PA6\Debug\PA6.exe
+  PA6.vcxproj -> C:\Users\solar\Documents\GitHub\CPTS-122-Projects\Programming Assignments\PA6\Debug\PA6.pdb (Full PDB)

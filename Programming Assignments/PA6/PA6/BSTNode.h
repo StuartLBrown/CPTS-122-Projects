@@ -25,7 +25,6 @@ public:
 	BSTNode<T,S> *getRight();
 	BSTNode<T,S> *getLeft();
 };
-//ostream &operator<<(ostream &lhs, BSTNode<char, string> *rhs);
 
 //standard constructor
 template<class T,class S>
@@ -45,11 +44,11 @@ void BSTNode<T, S>::setData2(S data) {
 }
 template<class T, class S>
 void BSTNode<T, S>::setRight(BSTNode<T, S> *_right) {
-	this->right = right;
+	this->right = _right;
 }
 template<class T, class S>
 void BSTNode<T, S>::setLeft(BSTNode<T, S> *_left) {
-	this->left = left;
+	this->left = _left;
 }
 //getters
 template<class T, class S>
@@ -68,8 +67,3 @@ template<class T, class S>
 BSTNode<T, S> *BSTNode<T, S>::getLeft() {
 	return this->left;
 }
-
-/*ostream &operator<<(ostream &lhs, BSTNode<char, string> *rhs) {
-	lhs << rhs->getData1() << " = " << rhs->getData2() << endl;
-	return lhs;
-}*/

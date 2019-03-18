@@ -8,8 +8,8 @@ private:
 	BSTNode<char, string> *head;
 	void destroy(BSTNode<char,string> *curr);
 	void insert(char chr, string morse, BSTNode<char, string> *curr);
-	void printTree(BSTNode<char, string> *curr);
-	bool search(char chr, BSTNode<char, string> *curr);
+	void printTree(BSTNode<char, string> *curr) const;
+	bool search(char chr, BSTNode<char, string> *curr) const;
 public:
 	//standard constructor
 	BST(string fileName = "", string fileName2 = "");
@@ -18,7 +18,10 @@ public:
 	void insert(char chr, string morse);
 	//precondition infile must already be opened
 	void convertToMorse(fstream &infile);
-	void printTree();
+	void printTree() const;
 	//prints the morse string of the character searched for, if it is found
-	bool search(char chr);
+	bool search(char chr) const;
+	void searchFile(string fileName = "") const;
 };
+
+ostream &operator<<(ostream &lhs, BSTNode<char, string> *rhs);
