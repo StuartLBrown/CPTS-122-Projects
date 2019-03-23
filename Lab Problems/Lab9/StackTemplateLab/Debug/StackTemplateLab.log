@@ -1,0 +1,5 @@
+﻿  main.cpp
+c:\github projects\cpts-122-projects\lab problems\lab9\stacktemplatelab\stack.h(110): warning C4018: '<': signed/unsigned mismatch
+c:\github projects\cpts-122-projects\lab problems\lab9\stacktemplatelab\stack.h(171): warning C4018: '<': signed/unsigned mismatch
+  StackTemplateLab.vcxproj -> C:\Github Projects\CPTS-122-Projects\Lab Problems\Lab9\Debug\StackTemplateLab.exe
+  StackTemplateLab.vcxproj -> C:\Github Projects\CPTS-122-Projects\Lab Problems\Lab9\Debug\StackTemplateLab.pdb (Full PDB)
