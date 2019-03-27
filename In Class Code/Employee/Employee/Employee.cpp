@@ -9,6 +9,7 @@ Employee::Employee(const string &newName, const double &newPayRate, const double
 
 Employee::~Employee()
 {
+	cout << "Destructor : Employee" << endl;
 }
 
 string Employee::getName()

@@ -14,11 +14,12 @@ using std::string;
 class Manager : public Employee
 {
 public:
-	Manager(const string &newName = "", const double &newPayRate = 0.0, const double &newHours = 0, const bool &newSalariedEmployee = false) {
-		Employee(newName, newPayRate, newHours);
+	Manager(const string &newName = "", const double &newPayRate = 0.0, const double &newHours = 0, const bool &newSalariedEmployee = false) : Employee(newName,newPayRate,newHours){
 		this->isSalaried = newSalariedEmployee;
 	}
-	~Manager();
+	~Manager() {
+		cout << "Destructor : Manager" << endl;
+	}
 
 	// With inheritance, we should NOT have to redefine
 	// many of the functions that we find in the Employee
