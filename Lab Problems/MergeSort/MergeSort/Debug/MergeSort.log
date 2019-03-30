@@ -1,0 +1,4 @@
+﻿  main.cpp
+c:\github projects\cpts-122-projects\lab problems\mergesort\mergesort\main.cpp(7): warning C4018: '<': signed/unsigned mismatch
+  MergeSort.vcxproj -> C:\Github Projects\CPTS-122-Projects\Lab Problems\MergeSort\Debug\MergeSort.exe
+  MergeSort.vcxproj -> C:\Github Projects\CPTS-122-Projects\Lab Problems\MergeSort\Debug\MergeSort.pdb (Full PDB)

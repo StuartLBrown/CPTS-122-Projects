@@ -24,10 +24,10 @@ public:
 	void setPayRate(const double &newPayRate);
 	void setHours(const double &newHours);
 
-	double calculatePay();
+	virtual double calculatePay();
 
 //subclasses don't have direct access to these data members (protected will make it so it does)
-private:
+protected:
 	string mName;
 	double mPayRate;
 	double mHours;

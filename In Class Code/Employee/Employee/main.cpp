@@ -1,5 +1,3 @@
-// AO
-
 // This example introduces inheritance. Note that
 // the Manager class is derived from the Employee class
 // Inheritance starter code! Not yet complete!
@@ -11,7 +9,7 @@ void printPay(Employee &e) {
 
 int main(void)
 {
-	Manager m("temp", 10, 40, false);
+	Manager m("temp", 4000,10,false);
 	printPay(m);
 	return 0;
 }
