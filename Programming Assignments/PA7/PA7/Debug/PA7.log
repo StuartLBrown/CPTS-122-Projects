@@ -1,0 +1,65 @@
+﻿  main.cpp
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\node.h(20): warning C4812: obsolete declaration style: please use 'Node<T>::Node' instead
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\node.h(41): warning C4812: obsolete declaration style: please use 'Node<T>::Node' instead
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(78): warning C4996: 'localtime': This function or variable may be unsafe. Consider using localtime_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\time.h(505): note: see declaration of 'localtime'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(106): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(107): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(109): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(110): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(111): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(112): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(113): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(146): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(147): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(149): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(150): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(151): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(152): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(153): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(156): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(159): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\node.h(20): warning C4812: obsolete declaration style: please use 'Node<T>::Node' instead
+          with
+          [
+              T=Data
+          ]
+  c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\node.h(20): note: while compiling class template member function 'Node<T>::Node(T)'
+          with
+          [
+              T=Data
+          ]
+  c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\list.h(25): note: see reference to function template instantiation 'Node<T>::Node(T)' being compiled
+          with
+          [
+              T=Data
+          ]
+  c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\list.h(24): note: while compiling class template member function 'void List<Data>::insertAtFront(T)'
+          with
+          [
+              T=Data
+          ]
+  c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(115): note: see reference to function template instantiation 'void List<Data>::insertAtFront(T)' being compiled
+          with
+          [
+              T=Data
+          ]
+  c:\github projects\cpts-122-projects\programming assignments\pa7\pa7\menu.h(13): note: see reference to class template instantiation 'List<Data>' being compiled
+  PA7.vcxproj -> C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA7\Debug\PA7.exe
+  PA7.vcxproj -> C:\Github Projects\CPTS-122-Projects\Programming Assignments\PA7\Debug\PA7.pdb (Full PDB)

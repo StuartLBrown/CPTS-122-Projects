@@ -4,11 +4,12 @@ class Node {
 public:
 	//standard constructor
 	Node<T>(T _data);
+	Node<T>(const Node<T> &newNode);
 
 	//getters and setters
 	Node<T> *getNext();
 	T getData();
-	void setData(T newData);
+	void setData(T &newData);
 	void setNext(Node<T> *newNext);
 private:
 	//member variables
@@ -29,10 +30,15 @@ T Node<T>::getData() {
 	return this->data;
 }
 template <class T>
-void Node<T>::setData(T newData) {
+void Node<T>::setData(T &newData) {
 	this->data = newData;
 }
 template <class T>
 void Node<T>::setNext(Node<T> *newNext) {
 	this->next = newNext;
+}
+template <class T>
+Node<T>::Node<T>(const Node<T> &newNode) {
+	next(newNode.next);
+	data = newNode.data;
 }

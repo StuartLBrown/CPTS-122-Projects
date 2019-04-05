@@ -6,17 +6,20 @@ using std::fstream;
 using std::cout;
 using std::cin;
 using std::endl;
+using std::to_string;
 #pragma once
 class Menu {
 private:
 	List<Data> list;
 	fstream courses, master;
 public:
-	Menu(string fileName1 = "classList.csv", string fileName2 = "masterList.csv");
+	Menu();
 
 	void displayMenu();
 
+
 	void markAbsences();
+
 
 	void readCourseList();
 
@@ -29,15 +32,13 @@ public:
 
 	void generateReport(int minAbsences);
 };
-Menu::Menu(string f1, string f2) {
+Menu::Menu() {
 	list = *(new List<Data>());
-	courses.open(f1, fstream::in);
-	courses.open(f2, fstream::in);
 }
 
 void Menu::displayMenu() {
-	int input = 0;
-	while (input != 0 && input != 6) {
+	int input = 1;
+	while (input >= 1 && input <= 5) {
 		cout << "1. Import course list\n2. Load master list\n3. Store master list\n4. Mark Absences\n5. Generate report\n6. Exit\n";
 		cin >> input;
 		if (input == 1)
@@ -50,42 +51,70 @@ void Menu::displayMenu() {
 			markAbsences();
 		else if (input == 5) {
 			int input2 = -1;
-			while (input2 >= -1) {
-				cout << "Enter a minimum number of absences to generate a report from: ";
+			while (input2 <= 0 || input2 >= 3) {
+				cout << "Enter an option:\n1.Generate a report for all students\n2.Generate a report with students that have at least n absences\n";
 				cin >> input2;
 			}
-			generateReport(input2);
+			if (input2 == 1)
+				generateReport(-1);
+			else {
+				while (input2 >= -1) {
+					cout << "Enter a minimum number of absences to generate a report from: ";
+					cin >> input2;
+				}
+				generateReport(input2);
+			}
 		}
 		system("cls");
 	}
 }
 
 void Menu::markAbsences() {
-	Node<Data> *curr = list.getHead();
+	system("cls");
+	Node<Data> *curr(list.getHead());
 	while (curr != nullptr) {
+		Data d = curr->getData();
 		time_t t = time(0);
 		struct tm *now = localtime(&t);
-		string date = (now->tm_year + 1900) + "/" + (now->tm_mon + 1) + '/' + now->tm_mday;
-		cout << "Was " << curr->getData().name << " absent today " << date << " 1 for yes, 0 for no"<<endl;
+		string date = to_string(now->tm_mon + 1) + "/" + to_string(now->tm_mday) + "/" + to_string(now->tm_year + 1900);
 		int input = -1;
 		while (input <= -1 || input >= 2) {
-			cout << "Was " << curr->getData().name << " absent today " << date << " 1 for yes, 0 for no" << endl;
+			cout << "Was " << d.name << " absent today " << date << "?\n1 for yes, 0 for no: ";
 			cin >> input;
+			if (input == 1 || input == 2)
+				break;
 		}
-		if (input == 1)
-			curr->getData().addAbscence(date);
+		if (input == 1) {
+			d.addAbscence(date);
+			d.setNAbsences(d.getNAbsences() + 1);
+		}
+		curr->setData(d);
+		curr = curr->getNext();
+
+		system("cls");
 	}
+	system("cls");
 }
 void Menu::readCourseList() {
+	courses.open("classList.csv");
 	char line[300];
 	courses.getline(line, 300);
 	while (!courses.eof()) {
 		courses.getline(line, 300);
 		if (line[0] == '\n')
 			break;
-		Data temp(atoi(strtok(line, ",")), atoi(strtok(NULL, ",")), strtok(NULL, ","), strtok(NULL, ","), strtok(NULL, ","), strtok(NULL, ","), strtok(NULL, "\n"),0);
+		int n = atoi(strtok(line, ",")), ID = atoi(strtok(NULL, ","));
+		string s1 = strtok(NULL, ",");
+		s1.append(",");
+		s1.append(strtok(NULL, ","));
+		string s2 = strtok(NULL, ",");
+		string s3 = strtok(NULL, ",");
+		string s4 = strtok(NULL, ",");
+		string s5 = strtok(NULL, "\n");
+		Data temp(n,ID, s1, s2, s3, s4, s5,0);
 		list.insertAtFront(temp);
 	}
+	courses.close();
 }
 
 void Menu::storeMasterList() {
@@ -95,7 +124,12 @@ void Menu::storeMasterList() {
 	master << ",ID,Name,Email,Units,Program,Level,Num Absences,Date Absence\n";
 	for (int i = 0; curr != nullptr; i++) {
 		Data temp = curr->getData();
-		master << i + 1 << "," << temp.getID() << "," << temp.name << "," << temp.email << "," << temp.units << "," << temp.major << "," << temp.level << "," << temp.getNAbsences() << "," << temp.removeAbsence() << endl;
+		master << i + 1 << "," << temp.getID() << "," << temp.name << "," << temp.email << "," << temp.units << "," << temp.major << "," << temp.level << "," << temp.getNAbsences();
+		Stack s(temp.getStack());
+		while (!s.isEmpty()) {
+			master << "," << s.pop();
+		}
+		master << endl;
 		curr = curr->getNext();
 	}
 }
@@ -109,8 +143,41 @@ void Menu::readMasterList() {
 		master.getline(line, 300);
 		if (line[0] == '\n')
 			break;
-		Data temp(atoi(strtok(line, ",")), atoi(strtok(NULL, ",")), strtok(NULL, ","), strtok(NULL, ","), strtok(NULL, ","), strtok(NULL, ","), strtok(NULL, ","), atoi(strtok(NULL, ","))-1);
+		int n = atoi(strtok(line, ",")), ID = atoi(strtok(NULL, ","));
+		string s1 = strtok(NULL, ",");
+		s1.append(",");
+		s1.append(strtok(NULL, ","));
+		string s2 = strtok(NULL, ",");
+		string s3 = strtok(NULL, ",");
+		string s4 = strtok(NULL, ",");
+		string s5 = strtok(NULL, ",");
+		int nAbsences = atoi(strtok(NULL, ","));
+		Data temp(n, ID, s1, s2, s3, s4, s5, nAbsences);
+		for (int i = 0; i < temp.getNAbsences()-1; i++) {
+			string date = strtok(NULL, ",");
+			temp.addAbscence(date);
+		}
 		string date = strtok(NULL, "\n");
 		temp.addAbscence(date);
 	}
+}
+
+void Menu::generateReport(int minAbsences) {
+	Node<Data> *curr = list.getHead();
+	while (curr != nullptr) {
+		if (minAbsences == -1) {
+			if (curr->getData().getNAbsences() == 0)
+				cout << curr->getData().name << " was never absent" << endl;
+			else
+				cout << curr->getData().name << " was most recently absent on " << curr->getData().peekStack() << " and has " << curr->getData().getNAbsences() << " absences" << endl;
+		}
+		else {
+			if (curr->getData().getNAbsences() >= minAbsences) {
+				cout << curr->getData().name << " has " << curr->getData().getNAbsences() << " absences" << endl;
+			}
+		}
+		curr = curr->getNext();
+	}
+	system("pause");
+	system("cls");
 }

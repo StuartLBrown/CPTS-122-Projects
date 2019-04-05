@@ -19,9 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{8A62220D-047D-43B1-B90B-BF11876CB165}</ProjectGuid>
+    <ProjectGuid>{D52BB1EC-A815-4D60-809B-3AB55B8CD482}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>PA7</RootNamespace>
+    <RootNamespace>Ciphers</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -142,18 +142,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Caesar.cpp" />
+    <ClCompile Include="Cipher.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Data.h" />
-    <ClInclude Include="List.h" />
-    <ClInclude Include="Menu.h" />
-    <ClInclude Include="Node.h" />
-    <ClInclude Include="Stack.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="classList.csv" />
-    <None Include="masterList.csv" />
+    <ClInclude Include="Caesar.h" />
+    <ClInclude Include="Cipher.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
