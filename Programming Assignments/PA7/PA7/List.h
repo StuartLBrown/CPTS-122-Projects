@@ -10,7 +10,7 @@ public:
 
 	List<T>(const List<T> &copy) { head = copy->getHead(); }
 
-	//standrd getter and setter
+	//standard getter and setter
 	Node<T> *getHead() const { return head; }
 	void setHead(Node<T> *_head) { head = _head; }
 	

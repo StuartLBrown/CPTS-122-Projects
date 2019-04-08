@@ -2,13 +2,18 @@
 #include "Stack.h"
 class Data {
 private:
+	//data members
 	Stack s;
 	int rNumber, ID, nAbsences;
 public:
+	//made these public since these would just be getters and setters
 	string name, email, units, major, level;
+	//standard constructor
 	Data(int rNumber=0, int ID=0, string name="", string email="", string units="", string major="", string level="",int nAbsences = 0 );
+	//copy constructor
 	Data(const Data &d);
 
+	//getters and setters
 	int getRNumber() { return rNumber; }
 	int getID() { return ID; }
 	int getNAbsences() { return nAbsences; }
@@ -18,10 +23,12 @@ public:
 		else
 			nAbsences = _nAbsences;
 	}
+	//allows for the user to get the top part of the stack
 	string peekStack() { return s.peek(); }
 
 	Stack getStack() { return s; }
-
+	
+	//pushing the data to the top of the stack
 	void addAbscence(string &date) {
 		s.push(date);
 	}
