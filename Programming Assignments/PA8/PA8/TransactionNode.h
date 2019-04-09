@@ -1,11 +1,12 @@
 #include "Node.h"
+#pragma once
 using std::cout;
 using std::endl;
 class TransactionNode : public Node {
 private:
 	int units;
 public:
-	~TransactionNode() {
+	~TransactionNode(){
 		delete left, right;
 	}
 	TransactionNode(string _data = "", int _units = 0) : Node(_data){

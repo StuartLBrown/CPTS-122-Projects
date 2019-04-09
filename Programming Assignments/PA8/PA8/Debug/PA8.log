@@ -1,0 +1,9 @@
+﻿  main.cpp
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa8\pa8\dataanalysis.h(40): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa8\pa8\dataanalysis.h(41): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+c:\users\solar\documents\github\cpts-122-projects\programming assignments\pa8\pa8\dataanalysis.h(42): warning C4996: 'strtok': This function or variable may be unsafe. Consider using strtok_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.10240.0\ucrt\string.h(453): note: see declaration of 'strtok'
+  PA8.vcxproj -> C:\Users\solar\Documents\GitHub\CPTS-122-Projects\Programming Assignments\PA8\Debug\PA8.exe
+  PA8.vcxproj -> C:\Users\solar\Documents\GitHub\CPTS-122-Projects\Programming Assignments\PA8\Debug\PA8.pdb (Full PDB)

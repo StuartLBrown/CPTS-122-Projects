@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#pragma once
 using std::string;
 class Node abstract{
 protected:
@@ -7,7 +8,9 @@ protected:
 	Node *left;
 	Node *right;
 public:
-	virtual ~Node();
+	virtual ~Node() {
+		delete left, right;
+	}
 	Node(string _data = "") {
 		data = _data;
 		left = nullptr;
