@@ -6,6 +6,8 @@
 
 int main(void)
 {
-
+	Cipher *c = new Caesar(10);
+	string msg = "test";
+	std::cout<<c->decode(c->encode(msg))<<std::endl;
 	return 0;
 }

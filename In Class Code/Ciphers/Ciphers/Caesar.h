@@ -6,6 +6,10 @@
 class Caesar:public Cipher
 {
 public:
+	Caesar(int _key = 0) {
+		key = _key;
+	}
+
 	string encode(const string &msg) {
 		string temp = msg;
 		for (int i = 0; i < temp.size(); i++)
@@ -15,7 +19,7 @@ public:
 
 	string decode(const string &encmsg) {
 		string temp = encmsg;
-		for (int i = 0; i < temp.size; i++)
+		for (int i = 0; i < temp.size(); i++)
 			temp[i] -= key;
 		return temp;
 	}
