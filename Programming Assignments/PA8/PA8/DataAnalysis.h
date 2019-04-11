@@ -26,6 +26,8 @@ public:
 void DataAnalysis::runAnalysis() {
 	openFile();
 	readFile();
+	system("pause");
+	system("cls");
 	displayTrends();
 }
 
@@ -50,7 +52,8 @@ void DataAnalysis::readFile() {
 		string type, transaction;
 		int units;
 		splitLine(units, type, transaction);
-		insertIntoBST(units,type,transaction);
+		if (type != "")
+			insertIntoBST(units,type,transaction);
 	}
 	cout << "Purchased Tree: " << endl;
 	treePurchased.printTree();
@@ -72,6 +75,8 @@ void DataAnalysis::displayTrends() {
 	treePurchased.findSmallest().printData();
 	cout << "Largest Purchased Units: ";
 	treePurchased.findLargest().printData();
+
+	system("pause");
 
 	cout << "Smallest Sold Units: ";
 	treeSold.findSmallest().printData();

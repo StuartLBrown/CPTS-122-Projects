@@ -17,10 +17,10 @@ public:
 		right = nullptr;
 	}
 	void setData(string newData) { data = newData; }
-	void setLeft(Node *newLeft) { left = newLeft; }
-	void setRight(Node *newRight) { right = newRight; }
+	void setLeft(Node *newLeft) { this->left = newLeft; }
+	void setRight(Node *newRight) { this->right = newRight; }
 	string getData() { return data; }
-	Node *getLeft() { return left; }
-	Node *getRight() { return right; }
+	Node *&getLeft() { return left; }
+	Node *&getRight() { return right; }
 	virtual void printData() = 0;
 };
