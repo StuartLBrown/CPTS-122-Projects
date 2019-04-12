@@ -8,6 +8,7 @@ private:
 	BST treePurchased;
 	ifstream CSVStream;
 
+	//openes the file with the file name
 	void openFile(string fileName = "data.csv") { CSVStream.open(fileName); }
 
 	//precondition CSVStream must have a valid line to read (i.e. the end of file must not be reached)

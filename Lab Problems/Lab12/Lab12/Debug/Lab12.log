@@ -1,0 +1,64 @@
+﻿  main.cpp
+c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(16): error C2248: 'List<T>::firstPtr': cannot access private member declared in class 'List<T>'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\node.h(57): note: see declaration of 'List<T>::firstPtr'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(7): note: see declaration of 'List<T>'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(15): note: while compiling class template member function 'void Queue<Packet>::printFrontBack(void)'
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(54): note: see reference to function template instantiation 'void Queue<Packet>::printFrontBack(void)' being compiled
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(36): note: see reference to class template instantiation 'Queue<Packet>' being compiled
+c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(16): error C2248: 'Node<T>::data': cannot access private member declared in class 'Node<T>'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\node.h(16): note: see declaration of 'Node<T>::data'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\node.h(57): note: see declaration of 'Node<T>'
+          with
+          [
+              T=Packet
+          ]
+c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(17): error C2248: 'List<T>::lastPtr': cannot access private member declared in class 'List<T>'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\node.h(58): note: see declaration of 'List<T>::lastPtr'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(7): note: see declaration of 'List<T>'
+          with
+          [
+              T=Packet
+          ]
+c:\github projects\cpts-122-projects\lab problems\lab12\lab12\queue.h(17): error C2248: 'Node<T>::data': cannot access private member declared in class 'Node<T>'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\node.h(16): note: see declaration of 'Node<T>::data'
+          with
+          [
+              T=Packet
+          ]
+  c:\github projects\cpts-122-projects\lab problems\lab12\lab12\node.h(57): note: see declaration of 'Node<T>'
+          with
+          [
+              T=Packet
+          ]
