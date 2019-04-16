@@ -9,11 +9,12 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(200, 200), "SFML works!");
+	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
 	sf::CircleShape shape(100.f);
-	Ball b((float)window.getSize().x / 4, sf::Color(sf::Color::Blue), sf::Vector2f(0,0));
+	Ball b((float)window.getSize().x / 50, sf::Color(sf::Color::Blue), sf::Vector2f(100,100));
 
-	Paddle p1(*(new sf::Vector2f(-10, -10)), *(new sf::Color(sf::Color::White)), *(new sf::Vector2f(window.getSize().x/50, window.getSize().y/4)));
+	Paddle p1(*(new sf::Vector2f(0,window.getSize().y/2)), sf::Color::White, *(new sf::Vector2f(window.getSize().x/50, window.getSize().y/5)));
+	Paddle p2(*(new sf::Vector2f(window.getSize().x-window.getSize().x/50, window.getSize().y / 2)), sf::Color::White, *(new sf::Vector2f(window.getSize().x / 50, window.getSize().y / 5)));
 
 	shape.setFillColor(sf::Color::Green);
 
@@ -24,10 +25,20 @@ int main()
 		{
 			if (event.type == sf::Event::Closed)
 				window.close();
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::W)&&p1.getPosition().y>=0)
+				p1.move(0, -5);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::S) &&(p1.getPosition().y+p1.getSize().y<=window.getSize().y))
+				p1.move(0, 5);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && p2.getPosition().y >= 0)
+				p2.move(0, -5);
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down) && (p2.getPosition().y + p2.getSize().y <= window.getSize().y))
+				p2.move(0, 5);
 		}
 
 		window.clear();
-		window.draw(shape);
+		window.draw(b);
+		window.draw(p1);
+		window.draw(p2);
 		window.display();
 	}
 

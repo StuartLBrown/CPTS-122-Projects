@@ -1,3 +1,5 @@
 ﻿  main.cpp
+c:\github projects\cpts-122-projects\in class code\pong\pong\main.cpp(16): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
+c:\github projects\cpts-122-projects\in class code\pong\pong\main.cpp(17): warning C4244: 'argument': conversion from 'unsigned int' to 'float', possible loss of data
   Pong.vcxproj -> C:\Github Projects\CPTS-122-Projects\In Class Code\Pong\Debug\Pong.exe
   Pong.vcxproj -> C:\Github Projects\CPTS-122-Projects\In Class Code\Pong\Debug\Pong.pdb (Full PDB)
