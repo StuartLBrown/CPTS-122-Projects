@@ -6,9 +6,12 @@
 
 #include "Ball.h"
 #include "Paddle.h"
+#include "DividebyZeroException.h"
+
+double divide(int numerator, int denominator);
 
 int main()
-{
+{/*
 	sf::RenderWindow window(sf::VideoMode(500, 500), "SFML works!");
 	sf::CircleShape shape(100.f);
 	Ball b((float)window.getSize().x / 50, sf::Color(sf::Color::Blue), sf::Vector2f(100,100));
@@ -41,6 +44,19 @@ int main()
 		window.draw(p2);
 		window.display();
 	}
-
+	*/
+	try {
+		std::cout << divide(10, 0);
+	}
+	catch (DivideByZeroException &e) {
+		std::cout << e.what() << std::endl;
+	}
 	return 0;
+}
+
+double divide(int numerator, int denominator) {
+	if (denominator == 0)
+		throw DivideByZeroException();
+	else
+		return numerator / denominator;
 }
