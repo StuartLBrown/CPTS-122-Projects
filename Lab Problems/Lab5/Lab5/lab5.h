@@ -8,8 +8,8 @@ public:
 	Complex(const Complex &c);
 	void printNumber(void);
 	Complex add(Complex &c);
-	double getReal();
-	double getComplex();
+	const double getReal();
+	const double getComplex();
 	void setReal(double r);
 	void setComplex(double c);
 	void read(void);

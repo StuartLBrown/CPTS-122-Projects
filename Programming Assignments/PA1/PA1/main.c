@@ -15,3 +15,11 @@ int main(void) {
 	fclose(infile);
 	fclose(outfile);
 }
+int calc_max(FitBitData data[1500]) {
+	int max = -10;
+	for (int i = 0; i < 1500; i++) {
+		if (data[i].steps > max)
+			max = data[i].steps;
+	}
+	return max;
+}

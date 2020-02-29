@@ -8,14 +8,14 @@ Complex::Complex(const Complex &c) {
 	real = c.real;
 }
 Complex Complex::add(Complex &c) {
-	real += c.real;
-	complex += c.complex;
+	real += c.getReal();
+	complex += c.getComplex();
 	return *this;
 }
-double Complex::getReal() {
+const double Complex::getReal() {
 	return real;
 }
-double Complex::getComplex() {
+const double Complex::getComplex() {
 	return complex;
 }
 void Complex::setReal(double r) {

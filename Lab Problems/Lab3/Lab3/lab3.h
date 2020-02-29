@@ -17,6 +17,8 @@ int isEmpty(Stack s);
 int push(Stack *s, Data data);
 void pop(Stack *s);
 Data peek(Stack s);
+void divStack(Stack* s);
+void addAll(Stack* s);
 //precondition p1 must already be set up with the number of disks passed in
 void towerOfHanoi(Stack p1, Stack p2, Stack p3, int numDisks);
 void printPole(Stack p1, Stack p2, Stack p3);

@@ -41,6 +41,33 @@ Data peek(Stack s) {
 	Data d = { 0 };
 	return d;
 }
+
+void divStack(Stack* s) {
+	if (!isEmpty(*s)) {
+		Data temp1 = peek(*s);
+		pop(s);
+		Data temp2 = { 0 };
+		if (!isEmpty(*s)) {
+			temp2 = peek(*s);
+			pop(s);
+			temp1.d = temp1.d / temp2.d;
+			push(s, temp1);
+		}
+		else
+			push(s, temp1);
+	}
+}
+
+void addAll(Stack* s) {
+	double sum = 0;
+	while (!isEmpty(*s)) {
+		sum += peek(*s).d;
+		pop(s);
+	}
+	Data total = { sum };
+	push(s, total);
+}
+
 void towerOfHanoi(Stack source, Stack aux, Stack dest, int numDisks) {
 	int numMoves = 0;
 	if (numDisks % 2 == 0) {
